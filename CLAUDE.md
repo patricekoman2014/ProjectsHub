@@ -29,3 +29,11 @@ This is a Next.js 16 application using the App Router pattern.
 - `app/globals.css` - Tailwind CSS v4 setup with CSS custom properties for theming
 - `next.config.ts` - Next.js configuration (TypeScript format)
 - `eslint.config.mjs` - ESLint 9 flat config
+
+## Domain Model
+
+HookHub is a directory for Claude Code hooks. The core type is `Hook` (defined in `app/types/hook.ts`):
+- **HookType**: `"command"` (shell command) or `"prompt"` (Claude prompt)
+- **HookEventType**: Claude Code lifecycle events (PreToolUse, PostToolUse, PermissionRequest, UserPromptSubmit, Notification, Stop, SubagentStop, SessionStart, SessionEnd, PreCompact)
+
+**Data flow:** Currently uses mock data (`app/data/mockHooks.ts`). No backend/API yet - submissions log to console.
